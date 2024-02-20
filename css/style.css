@@ -1,0 +1,851 @@
+/* Reset Styles and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+}
+.site-contact-details, .site-contact-details li {
+    padding: 0;
+    margin: 0;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+}
+li a {
+    display: block;
+    color: #635f5f;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+li a, 
+.dropbtn {
+    display: block;
+    background-color: transparent; 
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, 
+.dropdown:hover .dropbtn {
+    background-color: #f51330;
+}
+li 
+.dropdown {
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    color: white;
+}
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Submit button */
+#submit-btn {
+    background-color: #f51330;
+    color: white;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#submit-btn, .contact-block button {
+    background-color: #f51330;
+    color: #ffffff;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+#submit-btn:hover, .contact-block button:hover {
+    background-color: rgb(231, 51, 75);
+    color: #ffffff;
+}
+
+#submit-btn:active, .contact-block button:active {
+    transform: scale(0.95);
+}
+
+
+/* Navbar Section */
+.navbar {
+    --clr-shadow__border: #d9a1ff;
+    --clr-text: #F6F4EB;
+    --clr-space: #120e1e;
+    --clr-space-gr: #271950;
+    --clr-star: #E9F8F9;
+    --size: 3rem;
+
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    z-index: 999; 
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar a.highlight {
+  color: #f51330;
+  font-weight: bold;
+}
+
+.navbar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.navbar .stars {
+  width: 100%;
+  height: 100%;
+  gap: 1.5rem;
+  transition: 0.5s ease-in-out;
+  z-index: -1;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  background: linear-gradient(160deg, var(--clr-space), var(--clr-space-gr));
+}
+
+.navbar:hover .stars { opacity: 1; }
+
+.navbar .star {
+  height: 4rem;
+  width: 0.3rem;
+  transition: 0.5s;
+  border-radius: 50px;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  position: relative;
+  background-color: var(--clr-star);
+  animation: space-animation calc(0.1s * var(--i)) linear infinite;
+}
+
+@keyframes space-animation {
+    0% { transform: rotate(-30deg) translateY(calc(-52% * var(--i))); }
+    100% { transform: rotate(-30deg) translateY(calc(52% * var(--i))); }
+}
+  
+.text-uppercase { color: #f51330; }
+
+/* The switch - the box around the slider */
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+}
+  
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: rgb(37, 37, 37);
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2em;
+    width: 2em;
+    inset: 0;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.switch input:checked + .slider {
+    background: #edf109;
+}
+
+.switch input:focus + .slider {
+    box-shadow: 0 0 1px #edf109;
+}
+  
+.switch input:checked + .slider:before {
+    transform: translateX(1.6em);
+}
+
+/* Home Section */
+#home {
+    /* background-image: url(""); */
+    background-color: black; 
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 960px;
+    width: 90%;
+}
+
+.home-content img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.home-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.home-info h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.home-info p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.home-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.home-buttons a {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.contactmeA {
+    padding: 10px 20px; 
+    color: #f51330;
+    border: 1px solid #f51330; 
+    background-color: transparent;
+    transition: background-color 0.3s; 
+    cursor: pointer; 
+    border-radius: 5px;
+}
+
+.contactmeA:hover {
+    background-color: #f51330; 
+    color: white;
+}
+
+/* Resume Section */
+#resume {
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.myresume {
+    padding: 50px;
+    font-size: 35px;
+}
+
+.progress {
+    display: flex;
+    height: 0.3rem;
+    overflow: hidden;
+    font-size: 0.75rem;
+    background-color: #eaf0fc;
+    border-radius: 0.25rem;
+}
+
+.progress-bar {
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #F85C70;
+    transition: width 0.6s ease;
+}
+
+@media (max-width: 768px) {
+    .container {  grid-template-columns: 1fr; }
+    .resume-container { margin: 0; }
+}
+
+/* Achievements Section */
+#class-achievements {
+    width: 100%;
+    background-color: #1a232c;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+
+.achievement {
+    display: flex;
+    align-items: center;
+}
+
+.class-icon {
+    color: white;
+    border-radius: 50%;
+    font-size: 60px;
+}
+
+.border-light {
+    width: 1px;
+    height: 100px;
+    background: white;
+    margin: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.achievement-text {
+    color: white;
+    font-size: 16px;
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column; /* Start text on a new line */
+}
+
+.count {
+    color: #f51330;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.count_name {
+    font-size: 12px;
+    color: white;
+    margin-top: 5px;
+}
+
+/* Project Section */
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.radio-inputs {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    box-sizing: border-box;
+    box-shadow: 0 0 0px 1px black;
+    padding: 0.25rem;
+    width: 300px;
+    font-size: 14px;
+    margin: 50px 0;
+}
+
+.radio-inputs .radio {
+    flex: 1 1 auto;
+    text-align: center;
+}
+ 
+.radio-inputs .radio input {
+    display: none;
+}
+  
+.radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: none;
+    padding: .5rem 0;
+    color: white;
+    transition: all .15s ease-in-out;
+}
+  
+.radio-inputs .radio input:checked + .name {
+    background-color: #f51330;
+    font-weight: 600;
+}
+
+#projects {
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.project-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project {
+    width: 300px;
+    background: #1a232c;
+    box-shadow: none; 
+    transition: transform 0.3s ease;
+    border-radius: 5px;
+    margin: 50px;
+    position: relative; 
+}
+
+.project:hover {
+    transform: translateY(-10px);
+}
+
+.project-description {
+    padding: 20px;
+}
+
+.project-description h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+.project-description p {
+    margin: 0;
+    font-size: 16px;
+    color: white;
+}
+
+.project-description a {
+    font-weight: bold;
+    color: #f51330;
+    position: absolute;
+    text-decoration: none;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+}
+
+.project:hover .project-description a {
+    opacity: 1; /* Show the link on hover */
+}
+
+/* Circular icons */
+.circle-icon {
+    background: #f51330; 
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: -50px; /* Align with the top line of the project box */
+    left: 50%; /* Position in the middle of the box */
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /* Position icons above the project box */
+    pointer-events: none; /* Ensure icons are not interactive */
+}
+
+.circle-icon .project-icon {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    z-index: 2; /* Ensure icons are above the circle background */
+}
+
+.circle-icon img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/* AboutMe Section */
+#aboutme {
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#map {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.aboutme-contact-block {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.aboutme-block {
+    z-index: 1;
+    border-radius: 5px;
+    padding: 40px 40px;
+    margin: 0px 20px;
+}
+
+.social-media { padding-top: 1.5rem; }
+
+.social-media a {
+  text-decoration: none; 
+  color: inherit; 
+  padding-right: 2rem;
+}
+
+.social-media a:hover {
+  text-decoration: none; 
+  color: inherit;
+}
+
+.contact-block {
+    z-index: 1;
+    flex-basis: 60%;
+    border-radius: 5px;
+    padding: 40px 40px;
+    margin: 0px 20px;
+}
+
+h1::after{
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: #f51330;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Contact Section */
+#contact, .aboutme-block{ background-color: #1a232c; }
+.contact-block h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.contact-block form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-block label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contact-block input, .contact-block textarea {
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: white;
+}
+.contact:hover {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, #f51330 0%, #f51330 100%);
+}
+
+button:active { transform: translate(0em, 0.2em); }
+
+.contact-block .form-control {
+    position: relative;
+    margin: 20px 0 40px;
+    width: 100%;
+}
+  
+.contact-block .form-control input,
+.contact-block .form-control textarea {
+  background-color: transparent;
+  border: 0;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  color: white;
+}
+
+.input {
+    border-bottom: 2px white solid;
+}
+  
+.contact-block .form-control input:focus,
+.contact-block .form-control textarea:focus,
+.contact-block .form-control input:valid,
+.contact-block .form-control textarea:valid {
+  outline: 0;
+  border-bottom-color: lightblue;
+}
+
+.contact-block .form-control label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  pointer-events: none;
+}
+
+.contact-block .form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  color: white;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.contact-block .form-control input:focus+label span,
+.contact-block .form-control input:valid+label span,
+.contact-block .form-control textarea:focus+label span,
+.contact-block .form-control textarea:valid+label span {
+
+  color: red;
+  transform: translateY(-40px);
+}
+  
+#message {
+    height: 150px;
+    width: 100%;
+    resize: none;
+}
+
+/* Form elements */
+#name, #email, #message {
+    width: 100%;
+    padding: 10px;
+    border-bottom: 2px solid red; /* Add a black underline */
+    box-sizing: border-box;
+}
+
+/* Footer Section */
+footer {
+    background-color: #1a232c;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Mobile Version */
+@media only screen and (max-width: 767px) {
+    .home-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .home-content img {
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+    .home-info {
+        text-align: center;
+        margin-top: 50px;
+    }
+    .project-block {
+        justify-content: center;
+    }
+    .project {
+        width: 90%; /* Adjust the width as needed for the mobile layout */
+        margin: 50px 0;
+    }
+    .aboutme-contact-block {
+        flex-direction: column;
+        align-items: center;
+    }
+    .aboutme-block, .contact-block {
+        flex-basis: 90%; /* Adjust the flex-basis as needed for the mobile layout */
+        margin-bottom: 50px;
+    }
+    .contact-block h2 {
+        font-size: 24px;
+        margin-bottom: 50px;
+    }
+}
+
+/* Light-Mode */
+.light-mode #home {
+    background-color: white;
+    color: black;
+}
+
+.light-mode .contactmeA {
+    color: blue;
+    border: 1px solid blue;
+}
+
+.light-mode #resume {
+    background-color: white;
+    color: black;
+}
+
+.light-mode .project {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.light-mode .project-description h2,
+.light-mode body {
+    color: black;
+}
+
+.light-mode .circle-icon,
+.light-mode .progress-bar,
+.light-mode h1::after {
+    background-color: blue;
+}
+
+.light-mode #class-achievements {
+    background-color: white;
+    border: 1px solid black;
+}
+
+.light-mode .count,
+.light-mode .project-description a,
+.light-mode .text-uppercase {
+    color: blue;
+}
+
+.light-mode .border-light {
+    background: black;
+}
+
+.light-mode #projects,
+.light-mode .aboutme-block,
+.light-mode #contact,
+.light-mode .contact-block,
+.light-mode .count_name,
+.light-mode .class-icon,
+.light-mode footer,
+.light-mode .dropdown-content {
+    background-color: white;
+    color: black;
+}
+
+.light-mode .radio-inputs .radio .name,
+.light-mode h1,
+.light-mode h3,
+.light-mode a {
+    color: black;
+}
+
+.light-mode #name,
+.light-mode #email,
+.light-mode #message {
+    border-bottom: 2px solid blue;
+}
+
+.light-mode .radio-inputs .radio input:checked + .name {
+    background-color: blue;
+}
+
+.light-mode #submit-btn {
+    background-color: blue;
+    color: black;
+}
+
+.light-mode #submit-btn:hover,
+.light-mode .contact-block button:hover {
+    background-color: rgb(51, 102, 231);
+    color: #ffffff;
+}
+
+.light-mode .contact-block .form-control label{
+    color: black;
+}
+
+/* Ring CSS */
+.ring {
+    --uib-size: 40px;
+    --uib-speed: 2s;
+    --uib-color: white;
+
+    height: var(--uib-size);
+    width: var(--uib-size);
+    vertical-align: middle;
+    transform-origin: center;
+    animation: rotate var(--uib-speed) linear infinite;
+}
+
+.ring circle {
+    fill: none;
+    stroke: var(--uib-color);
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    animation: stretch calc(var(--uib-speed) * 0.75) ease-in-out infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes stretch {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 90, 200;
+        stroke-dashoffset: -35px;
+    }
+    100% {
+        stroke-dashoffset: -124px;
+    }
+}
